@@ -75,8 +75,8 @@
 		24CC93702949FD7F00495FF1 /* AsyncImageCahcingWithGenericJsonApi */ = {
 			isa = PBXGroup;
 			children = (
-				24E48027294A299E00C83437 /* Cached */,
 				24CC938B294A1D8700495FF1 /* Application */,
+				24E48027294A299E00C83437 /* Cached */,
 				24CC9384294A1D4E00495FF1 /* Networking */,
 				24CC9399294A1F9000495FF1 /* ViewModel */,
 				24CC939E294A207400495FF1 /* Model */,

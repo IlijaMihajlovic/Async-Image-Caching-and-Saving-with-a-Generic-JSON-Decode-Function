@@ -59,14 +59,15 @@ struct CachedImage<Content: View>: View {
     }
 }
 
-struct CachedImage_Previews: PreviewProvider {
-    static var previews: some View {
-        CachedImage(item: "", url: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/RedDot_Burger.jpg/600px-RedDot_Burger.jpg" ) { _ in EmptyView() }
-    }
-}
-
 extension CachedImage {
     enum CachedImageError: Error {
         case invalidData
+    }
+}
+
+
+struct CachedImage_Previews: PreviewProvider {
+    static var previews: some View {
+        CachedImage(item: "", url: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/RedDot_Burger.jpg/600px-RedDot_Burger.jpg" ) { _ in EmptyView() }
     }
 }
