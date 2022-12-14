@@ -7,7 +7,7 @@
 
 import Foundation
 
-@MainActor
+@MainActor 
 final class HomeViewModel: ObservableObject {
 	
     private let client = Client()

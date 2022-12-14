@@ -13,10 +13,10 @@ struct HomeViewCell: View {
     
     var body: some View {
         ZStack {
-            RoundedRectangle(cornerRadius: 25)
+            RoundedRectangle(cornerRadius: 40)
                 .fill(.cyan)
-                .opacity(0.9)
-                .frame(height: 120)
+                .opacity(0.4)
+                .frame(height: 130) // TODO: Change Dimensions
             
             HStack {
                 CachedImage(item: character.name, url: character.image, animation: .spring(), transition: .slide.combined(with: .opacity)) { phase in
@@ -25,7 +25,9 @@ struct HomeViewCell: View {
                         
                     case .empty:
                         ProgressView()
-                            .frame(width: 100, height: 100)
+                        
+                        // TODO: - Change Dimensions
+                            .frame(width: SCREEN_SIZE.width / 3, height: 120)
                             .background(.blue, in: RoundedRectangle(cornerRadius: 8,
                                                                     style: .continuous))
                         
@@ -33,25 +35,22 @@ struct HomeViewCell: View {
                         image
                             .resizable()
                             .aspectRatio(contentMode: .fit)
-                            .frame(width: 100, height: 100)
+                            .frame(width: SCREEN_SIZE.width / 3, height: 110)
                             .padding()
-                            .background(.blue, in: RoundedRectangle(cornerRadius: 8,
-                                                                    style: .continuous))
+                            .background(.blue, in: RoundedRectangle(cornerRadius: 8, style: .continuous))
                     
+                        // TODO: - Improve Error Handling
                     case .failure(let error):
                         Image(systemName: "xmark")
                             .symbolVariant(.circle.fill)
                             .foregroundStyle(.white)
                             .frame(width: 100, height: 100)
-                            .background(.blue, in: RoundedRectangle(cornerRadius: 8,
-                                                                    style: .continuous))
+                            .background(.blue, in: RoundedRectangle(cornerRadius: 8, style: .continuous))
                     @unknown default:
                         EmptyView()
                     }
                     
                 }
-                
-                
                 
                 VStack(alignment: .leading, spacing: 8) {
                     Text(character.name)
