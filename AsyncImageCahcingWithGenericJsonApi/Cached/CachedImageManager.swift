@@ -14,8 +14,7 @@ final class CachedImageManager: ObservableObject {
     private let imageRetriver = ImageRetriver()
     
     @MainActor
-    func load(_ item: String, url: String,
-              cache: ImageCache = .shared) async {
+    func load(_ item: String, url: String,cache: ImageCache = .shared) async {
         
         self.currentState = .loading
         
@@ -55,13 +54,16 @@ extension CachedImageManager {
 extension CachedImageManager.CurrentState: Equatable {
     static func == (lhs: CachedImageManager.CurrentState,
                     rhs: CachedImageManager.CurrentState) -> Bool {
+       
         switch (lhs, rhs) {
+        
         case (.loading, .loading):
             return true
         case (let .failed(lhsError), let .failed(rhsError)):
             return lhsError.localizedDescription == rhsError.localizedDescription
         case (let .success(lhsData), let .success(rhsData)):
             return lhsData == rhsData
+        
         default:
             return false
         }

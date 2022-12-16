@@ -7,7 +7,7 @@
 
 import Foundation
 
-class ImageCache {
+final class ImageCache {
     
     typealias CacheType = NSCache<NSString, NSData>
     
