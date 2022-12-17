@@ -15,6 +15,7 @@ struct HomeView: View {
         NavigationStack() {
             ScrollView(showsIndicators: false) {
                 LazyVStack {
+                    
                     ForEach(viewModel.characters, id: \.id) { character in
 
                         NavigationLink(value: character) {
