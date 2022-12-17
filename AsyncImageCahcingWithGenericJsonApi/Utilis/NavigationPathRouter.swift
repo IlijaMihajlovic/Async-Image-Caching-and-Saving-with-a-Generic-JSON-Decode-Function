@@ -8,7 +8,8 @@
 import Foundation
 import SwiftUI
 
-class Coordinator: ObservableObject {
+//Create an application router for the NavigationStack.
+final class NavigationPathRouter: ObservableObject {
     @Published var path = NavigationPath()
     
     func gotoHomePage() {

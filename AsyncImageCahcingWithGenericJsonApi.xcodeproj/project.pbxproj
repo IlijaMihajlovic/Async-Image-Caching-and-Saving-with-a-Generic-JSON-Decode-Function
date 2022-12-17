@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		24C7F23E294DC2360021BAB1 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C7F23D294DC2360021BAB1 /* DetailView.swift */; };
-		24C7F240294DC29D0021BAB1 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C7F23F294DC29D0021BAB1 /* Coordinator.swift */; };
+		24C7F240294DC29D0021BAB1 /* NavigationPathRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C7F23F294DC29D0021BAB1 /* NavigationPathRouter.swift */; };
 		24CC93722949FD7F00495FF1 /* AsyncImageCahcingWithGenericJsonApiApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24CC93712949FD7F00495FF1 /* AsyncImageCahcingWithGenericJsonApiApp.swift */; };
 		24CC93762949FD8000495FF1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 24CC93752949FD8000495FF1 /* Assets.xcassets */; };
 		24CC937A2949FD8000495FF1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 24CC93792949FD8000495FF1 /* Preview Assets.xcassets */; };
@@ -29,7 +29,7 @@
 
 /* Begin PBXFileReference section */
 		24C7F23D294DC2360021BAB1 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
-		24C7F23F294DC29D0021BAB1 /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		24C7F23F294DC29D0021BAB1 /* NavigationPathRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationPathRouter.swift; sourceTree = "<group>"; };
 		24CC936E2949FD7F00495FF1 /* AsyncImageCahcingWithGenericJsonApi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AsyncImageCahcingWithGenericJsonApi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		24CC93712949FD7F00495FF1 /* AsyncImageCahcingWithGenericJsonApiApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncImageCahcingWithGenericJsonApiApp.swift; sourceTree = "<group>"; };
 		24CC93752949FD8000495FF1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -103,7 +103,6 @@
 			children = (
 				24E48023294A298100C83437 /* HomeView.swift */,
 				24C7F23D294DC2360021BAB1 /* DetailView.swift */,
-				24C7F23F294DC29D0021BAB1 /* Coordinator.swift */,
 				24E48021294A297500C83437 /* HomeViewCell.swift */,
 			);
 			path = View;
@@ -112,6 +111,7 @@
 		24CC9381294A1D1F00495FF1 /* Utilis */ = {
 			isa = PBXGroup;
 			children = (
+				24C7F23F294DC29D0021BAB1 /* NavigationPathRouter.swift */,
 				24CC9382294A1D3F00495FF1 /* Constants.swift */,
 			);
 			path = Utilis;
@@ -227,7 +227,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				24C7F240294DC29D0021BAB1 /* Coordinator.swift in Sources */,
+				24C7F240294DC29D0021BAB1 /* NavigationPathRouter.swift in Sources */,
 				24E4802E294A29B300C83437 /* ImageCache.swift in Sources */,
 				24E4802F294A29B300C83437 /* CachedImageManager.swift in Sources */,
 				24E48024294A298100C83437 /* HomeView.swift in Sources */,

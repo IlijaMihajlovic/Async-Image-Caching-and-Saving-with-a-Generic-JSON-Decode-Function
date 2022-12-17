@@ -8,11 +8,11 @@
 import SwiftUI
 
 struct HomeView: View {
+   
     @StateObject var viewModel = HomeViewModel()
-
     var body: some View {
         
-        NavigationStack {
+        NavigationStack() {
             ScrollView(showsIndicators: false) {
                 LazyVStack {
                     ForEach(viewModel.characters, id: \.id) { character in

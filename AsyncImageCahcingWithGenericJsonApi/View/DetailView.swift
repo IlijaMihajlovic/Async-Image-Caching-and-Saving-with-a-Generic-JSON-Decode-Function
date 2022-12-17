@@ -9,8 +9,6 @@ import SwiftUI
 
 struct DetailView: View {
     
-    @EnvironmentObject private var router: Coordinator
-    
     let subject : Character
     
     init(_ subject: Character) {
@@ -22,7 +20,7 @@ struct DetailView: View {
         Text("Your are in Detail view")
         
         Text ("Your selected subject \(subject.name)")
-      
+ 
     }
 }
 
