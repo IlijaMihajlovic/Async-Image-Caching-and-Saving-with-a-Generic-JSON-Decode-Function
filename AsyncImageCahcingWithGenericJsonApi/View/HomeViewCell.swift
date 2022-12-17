@@ -12,6 +12,7 @@ struct HomeViewCell: View {
     var character: Character
     
     var body: some View {
+        
         ZStack {
             RoundedRectangle(cornerRadius: 40)
                 .fill(.cyan)
@@ -90,8 +91,8 @@ struct HomeViewCell: View {
     }
 }
 
-struct HomeViewCell_Previews: PreviewProvider {
-    static var previews: some View {
-        HomeViewCell(character: Character(id: 1, name: "Rick Sanchez", status: "Alive", species: "Human", gender: "Male", image: "https://rickandmortyapi.com/api/character/avatar/1.jpeg"))
-    }
-}
+//struct HomeViewCell_Previews: PreviewProvider {
+//    static var previews: some View {
+//        HomeViewCell(character: Character(id: 1, name: "Rick Sanchez", status: "Alive", species: "Human", gender: "Male", image: "https://rickandmortyapi.com/api/character/avatar/1.jpeg"))
+//    }
+//}

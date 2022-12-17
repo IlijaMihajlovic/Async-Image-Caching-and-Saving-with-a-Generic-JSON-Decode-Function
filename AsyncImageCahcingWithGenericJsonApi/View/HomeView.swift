@@ -17,8 +17,10 @@ struct HomeView: View {
                 LazyVStack {
                     ForEach(viewModel.characters, id: \.id) { character in
                         
-                        HomeViewCell(character: character)
                         
+                        NavigationLink(value: character) {
+                            HomeViewCell(character: character)
+                        }
                     }
                 }
                 .padding()
@@ -32,6 +34,9 @@ struct HomeView: View {
             }
             .navigationTitle("Rick & Morty API")
             .navigationBarTitleDisplayMode(.automatic)
+            .navigationDestination(for: Character.self) { dest in
+                DetailView(dest)
+            }
         }
     }
 }

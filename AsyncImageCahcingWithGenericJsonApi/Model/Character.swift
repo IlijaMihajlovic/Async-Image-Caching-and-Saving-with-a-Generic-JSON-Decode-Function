@@ -7,11 +7,11 @@
 
 import Foundation
 
-struct Characters: Codable {
+struct Characters: Codable  {
 	let results: [Character]
 }
 
-struct Character: Codable {
+struct Character: Codable, Hashable, Identifiable {
 	let id: Int
 	let name: String
 	let status: String
