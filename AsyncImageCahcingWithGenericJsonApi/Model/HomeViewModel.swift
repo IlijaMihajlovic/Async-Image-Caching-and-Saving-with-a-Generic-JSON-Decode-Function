@@ -6,6 +6,8 @@
 //
 
 import Foundation
+import SwiftUI
+
 
 @MainActor 
 final class HomeViewModel: ObservableObject {
@@ -15,12 +17,57 @@ final class HomeViewModel: ObservableObject {
     @Published private(set) var characters: [Character] = []
 	@Published private(set) var errorMessage: String = ""
 	@Published var hasError: Bool = false
+    
+    
+    @Published var showingFavs = false
+    @Published var savedItems: Set<Int> = [1, 7]
+    
+    
+    var request: URLRequest = {
+        let urlString = "\(BASE_URL)/character"
+        let url = URL(string: urlString)!
+        return URLRequest(url: url)
+    }()
+    
+    
+    var filteredItems: [Character]  {
+               if showingFavs {
+                   return characters.filter { savedItems.contains($0.id) }
+               }
+               return characters
+           }
+           
+    
+    private var db = Database()
+            
+            init() {
+                self.savedItems = db.load()
+                //self.characters = Character.sampleItems
+            }
+            
+            func sortFavs() {
+                withAnimation() {
+                    showingFavs.toggle()
+                }
+            }
+            
+            func contains(_ item: Character) -> Bool {
+                    savedItems.contains(item.id)
+                }
+    
 
-	var request: URLRequest = {
-		let urlString = "\(BASE_URL)/character"
-		let url = URL(string: urlString)!
-		return URLRequest(url: url)
-	}()
+        // Toggle saved items
+        func toggleFav(item: Character) {
+            if contains(item) {
+                savedItems.remove(item.id)
+            } else {
+                savedItems.insert(item.id)
+            }
+            db.save(items: savedItems)
+        }
+    
+
+
 
 	func fetchCharacters() async {
 		do {

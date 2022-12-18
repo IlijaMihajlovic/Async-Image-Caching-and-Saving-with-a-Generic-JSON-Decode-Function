@@ -12,12 +12,13 @@ struct Characters: Codable  {
 }
 
 struct Character: Codable, Hashable, Identifiable {
-	let id: Int
+    let id: Int
 	let name: String
 	let status: String
 	let species: String
 	let gender: String
 	let image: String
+   
 	
 	enum CodingKeys: CodingKey {
 		case id
@@ -26,6 +27,7 @@ struct Character: Codable, Hashable, Identifiable {
 		case species
 		case gender
 		case image
+      
 	}
 }
 

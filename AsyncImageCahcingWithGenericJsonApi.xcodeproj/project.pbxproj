@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2436180D294F548900ACB662 /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2436180C294F548900ACB662 /* Database.swift */; };
 		24C7F23E294DC2360021BAB1 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C7F23D294DC2360021BAB1 /* DetailView.swift */; };
 		24C7F240294DC29D0021BAB1 /* NavigationPathRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C7F23F294DC29D0021BAB1 /* NavigationPathRouter.swift */; };
 		24CC93722949FD7F00495FF1 /* AsyncImageCahcingWithGenericJsonApiApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24CC93712949FD7F00495FF1 /* AsyncImageCahcingWithGenericJsonApiApp.swift */; };
@@ -28,6 +29,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2436180C294F548900ACB662 /* Database.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
 		24C7F23D294DC2360021BAB1 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		24C7F23F294DC29D0021BAB1 /* NavigationPathRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationPathRouter.swift; sourceTree = "<group>"; };
 		24CC936E2949FD7F00495FF1 /* AsyncImageCahcingWithGenericJsonApi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AsyncImageCahcingWithGenericJsonApi.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -60,6 +62,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2436180B294F547800ACB662 /* Test */ = {
+			isa = PBXGroup;
+			children = (
+				2436180C294F548900ACB662 /* Database.swift */,
+			);
+			path = Test;
+			sourceTree = "<group>";
+		};
 		24CC93652949FD7F00495FF1 = {
 			isa = PBXGroup;
 			children = (
@@ -84,6 +94,7 @@
 				24CC9384294A1D4E00495FF1 /* Networking */,
 				24CC939E294A207400495FF1 /* Model */,
 				24CC9380294A1B0400495FF1 /* View */,
+				2436180B294F547800ACB662 /* Test */,
 				24CC9381294A1D1F00495FF1 /* Utilis */,
 				24CC93782949FD8000495FF1 /* Preview Content */,
 			);
@@ -240,6 +251,7 @@
 				24CC93722949FD7F00495FF1 /* AsyncImageCahcingWithGenericJsonApiApp.swift in Sources */,
 				24CC9389294A1D7100495FF1 /* Client.swift in Sources */,
 				24E48030294A29B300C83437 /* ImageRetriver.swift in Sources */,
+				2436180D294F548900ACB662 /* Database.swift in Sources */,
 				24CC9383294A1D3F00495FF1 /* Constants.swift in Sources */,
 				24C7F23E294DC2360021BAB1 /* DetailView.swift in Sources */,
 				24CC938A294A1D7100495FF1 /* ApiError.swift in Sources */,
