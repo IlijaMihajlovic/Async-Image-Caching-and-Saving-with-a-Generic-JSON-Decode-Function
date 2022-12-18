@@ -8,8 +8,9 @@
 import Foundation
 
 final class Database {
-    private let FAV_KEY = "fav_key"
     
+    //MARK: - Persist user favorites to database
+  
     func save(items: Set<Int>) {
         let array = Array(items)
         UserDefaults.standard.set(array, forKey: FAV_KEY)
