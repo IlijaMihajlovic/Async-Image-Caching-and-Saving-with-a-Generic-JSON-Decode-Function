@@ -15,9 +15,18 @@ struct HomeView: View {
         NavigationStack() {
             ScrollView(showsIndicators: false) {
                 LazyVStack {
-                    
-                    ForEach(viewModel.characters, id: \.id) { character in
-
+                    ForEach(viewModel.filteredItems, id: \.id) { character in
+                        
+                        
+                        Button("Toggle Favorites", action: viewModel.sortFavorite)
+                                      .padding()
+                        
+                        Image(systemName: viewModel.contains(character) ? "heart.fill" : "heart")
+                                                    .foregroundColor(.red)
+                                                    .onTapGesture {
+                                                        viewModel.toggleFavortie(item: character)
+                                                    }
+                        
                         NavigationLink(value: character) {
                             HomeViewCell(character: character)
                         }
