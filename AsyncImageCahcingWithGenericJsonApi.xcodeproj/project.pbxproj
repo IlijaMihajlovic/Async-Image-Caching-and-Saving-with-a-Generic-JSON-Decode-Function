@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		240896302950BC3C00AD15CE /* EmptyViewForSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2408962F2950BC3C00AD15CE /* EmptyViewForSearch.swift */; };
 		2436180D294F548900ACB662 /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2436180C294F548900ACB662 /* Database.swift */; };
 		24C7F23E294DC2360021BAB1 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C7F23D294DC2360021BAB1 /* DetailView.swift */; };
 		24C7F240294DC29D0021BAB1 /* NavigationPathRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C7F23F294DC29D0021BAB1 /* NavigationPathRouter.swift */; };
@@ -29,6 +30,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2408962F2950BC3C00AD15CE /* EmptyViewForSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyViewForSearch.swift; sourceTree = "<group>"; };
 		2436180C294F548900ACB662 /* Database.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
 		24C7F23D294DC2360021BAB1 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		24C7F23F294DC29D0021BAB1 /* NavigationPathRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationPathRouter.swift; sourceTree = "<group>"; };
@@ -113,6 +115,7 @@
 			isa = PBXGroup;
 			children = (
 				24E48023294A298100C83437 /* HomeView.swift */,
+				2408962F2950BC3C00AD15CE /* EmptyViewForSearch.swift */,
 				24C7F23D294DC2360021BAB1 /* DetailView.swift */,
 				24E48021294A297500C83437 /* HomeViewCell.swift */,
 			);
@@ -244,6 +247,7 @@
 				24E48024294A298100C83437 /* HomeView.swift in Sources */,
 				24E4802D294A29B300C83437 /* CachedImage.swift in Sources */,
 				24CC93A0294A215800495FF1 /* Character.swift in Sources */,
+				240896302950BC3C00AD15CE /* EmptyViewForSearch.swift in Sources */,
 				24E48031294A29B300C83437 /* FileStorageManager.swift in Sources */,
 				24E48022294A297500C83437 /* HomeViewCell.swift in Sources */,
 				24CC9388294A1D7100495FF1 /* AsyncGenericApi.swift in Sources */,

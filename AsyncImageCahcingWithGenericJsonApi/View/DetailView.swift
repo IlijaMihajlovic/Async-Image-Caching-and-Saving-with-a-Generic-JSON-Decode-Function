@@ -11,6 +11,7 @@ struct DetailView: View {
     
     let subject : Character
     
+    
     init(_ subject: Character) {
         self.subject = subject
     }
@@ -23,5 +24,4 @@ struct DetailView: View {
  
     }
 }
-
 

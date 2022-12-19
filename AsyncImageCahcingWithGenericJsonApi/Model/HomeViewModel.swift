@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 
-@MainActor 
+@MainActor
 final class HomeViewModel: ObservableObject {
     
     @Published private(set) var characters: [Character] = []
@@ -18,6 +18,8 @@ final class HomeViewModel: ObservableObject {
     
     @Published var showingFavortie = false
     @Published var savedItems: Set<Int> = []
+    
+    @Published var filteredData: [Character] = []
     
     private let client = Client()
     private var db = Database()
@@ -28,20 +30,21 @@ final class HomeViewModel: ObservableObject {
         let url = URL(string: urlString)!
         return URLRequest(url: url)
     }()
+  
+
+    init() {
+        self.savedItems = db.load()
+        //self.characters = Character.sampleItems
+        
+    }
+    //MARK: - Filter and Favorte
     
-    // MARK: - Filter and Favorite Items
-    
+    //Filter and Favorite Items
     var filteredItems: [Character]  {
         if showingFavortie {
             return characters.filter { savedItems.contains($0.id) }
         }
         return characters
-    }
- 
-    
-    init() {
-        self.savedItems = db.load()
-        //self.characters = Character.sampleItems
     }
     
     func sortFavorite() {
@@ -54,6 +57,7 @@ final class HomeViewModel: ObservableObject {
         savedItems.contains(item.id)
     }
     
+    
     // TODO: - Improve 
     func toggleFavortie(item: Character) {
         if contains(item) {
@@ -63,6 +67,7 @@ final class HomeViewModel: ObservableObject {
         }
         db.save(items: savedItems)
     }
+    
     
     //MARK: - Feth decoded Data
     
@@ -74,5 +79,10 @@ final class HomeViewModel: ObservableObject {
             errorMessage = "\((error as! ApiError).customDescription)"
             hasError = true
         }
+    }
+    
+    //MARK: - Search Bar
+    func search(with query: String = "") {
+        filteredData = query.isEmpty ? characters : characters.filter({$0.name.contains(query)})
     }
 }
