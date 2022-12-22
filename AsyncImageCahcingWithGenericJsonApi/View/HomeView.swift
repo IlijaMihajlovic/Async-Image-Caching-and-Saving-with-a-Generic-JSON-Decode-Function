@@ -11,7 +11,6 @@ struct HomeView: View {
     
     @StateObject var viewModel = HomeViewModel()
     @State private var query = ""
-  
 
     var body: some View {
         
@@ -25,11 +24,17 @@ struct HomeView: View {
          
                         NavigationLink(value: character) {
                             HomeViewCell(character: character)
-                        }
+                            
+                          
+                            }
+                        
                     }
+   
          
                 }
                 .padding()
+                
+              
                 
                 .task {
                     await viewModel.fetchCharacters()
@@ -53,7 +58,7 @@ struct HomeView: View {
                     }
                 }
                 
-                .searchable(text: $query,placement: .navigationBarDrawer(displayMode: .always), prompt: "Find a person")
+                .searchable(text: $query,placement: .navigationBarDrawer, prompt: "Find a person")
     
                 
                 .alert("", isPresented: $viewModel.hasError) {} message: {
@@ -68,9 +73,10 @@ struct HomeView: View {
             .navigationDestination(for: Character.self) { dest in
                 
                 DetailView(dest) // TODO: - Improve
+                
             }
-            
         }
+        
     }
 }
 
