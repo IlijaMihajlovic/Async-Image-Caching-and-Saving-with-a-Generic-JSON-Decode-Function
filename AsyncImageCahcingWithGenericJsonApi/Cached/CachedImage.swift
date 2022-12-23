@@ -36,10 +36,12 @@ struct CachedImage<Content: View>: View {
             case .loading:
                 content(.empty)
                     .transition(transition)
+                
             case .success(let data):
                 if let image = UIImage(data: data) {
                     content(.success(Image(uiImage: image)))
                         .transition(transition)
+              
                 } else {
                     content(.failure(CachedImageError.invalidData))
                         .transition(transition)

@@ -11,28 +11,33 @@ struct ScreenOne: View {
     @State private var query = ""
     @EnvironmentObject var router: TabRouter
     
-    var body: some View {
     
+//    @Environment(\.dismiss) private var dismiss
+//    @Environment(\.dismissSearch) private var dismissSearch
+
+    var body: some View {
+        
         ZStack {
             Text("Screen 1")
                 .bold()
-
             
 //            Button {
 //                router.change(to: .two)
 //                dismiss()
+//                dismissSearch()
 //
 //            } label: {
 //                Text("Switch to Screen Two")
-   
+//            }
+        
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .background(.pink)
+            .clipped()
+            
         }
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(.pink)
-        .clipped()
-
     }
-
     
+     
     
 }
 

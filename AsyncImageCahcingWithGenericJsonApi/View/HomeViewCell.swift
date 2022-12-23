@@ -10,18 +10,12 @@ import SwiftUI
 struct HomeViewCell: View {
     
     var character: Character
-
+    
     @EnvironmentObject var viewModel: HomeViewModel
     
     var body: some View {
         
         ZStack {
-            RoundedRectangle(cornerRadius: 40)
-                .fill(.cyan)
-                .opacity(0.4)
-                .frame(height: 130) // TODO: Change Dimensions
-            
-            
             HStack {
                 CachedImage(item: character.name, url: character.image, animation: .spring(), transition: .slide.combined(with: .opacity)) { phase in
                     
@@ -31,17 +25,19 @@ struct HomeViewCell: View {
                         ProgressView()
                         
                         // TODO: - Change Dimensions
-                            .frame(width: SCREEN_SIZE.width / 3, height: 120)
+                            .frame(width: SCREEN_SIZE.width / 3, height: 100)
                             .background(.blue, in: RoundedRectangle(cornerRadius: 8,
                                                                     style: .continuous))
                         
                     case .success(let image):
                         image
+                        
                             .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: SCREEN_SIZE.width / 3, height: 110)
-                            .padding()
-                            .background(.blue, in: RoundedRectangle(cornerRadius: 8, style: .continuous))
+                            .scaledToFill()
+                            .clipShape(Circle())
+                            .frame(width: SCREEN_SIZE.width / 4, height: 100)
+                            .padding(.all, 10)
+                        
                         
                         // TODO: - Improve Error Handling
                     case .failure(let error):
@@ -57,51 +53,55 @@ struct HomeViewCell: View {
                 }
                 
                 VStack(alignment: .leading, spacing: 8) {
+                    
                     Text(character.name)
                         .font(.system(size: 16, weight: .semibold))
+                        .foregroundColor(.black)
                     
-                    HStack(spacing: 8) {
-                        Text("Status:")
-                        Text(character.status)
-                            .bold()
-                    }
-                    HStack(spacing: 8) {
-                        Text("Gender:")
-                        Text(character.gender)
-                            .bold()
-                    }
+                    
                     HStack(spacing: 8) {
                         Text("Species:")
+                            .foregroundColor(.gray)
                         Text(character.species)
                             .bold()
+                            .foregroundColor(.black)
                     }
                     
-       
+                    
                     HStack(spacing: 8) {
-                        Text("FAV:")
-                                Image(systemName: viewModel.contains(character) ? "heart.fill" : "heart")
-                                    .foregroundColor(.red)
-                                   
-                                    .onTapGesture {
-                                        viewModel.toggleFavortie(item: character)
-                                    }
+                        Text("Favorite:")
+                            .foregroundColor(.gray)
+                        Image(systemName: viewModel.contains(character) ? "heart.fill" : "heart")
+                            .foregroundColor(.red)
+                            .bold()
+                            .onTapGesture {
+                                viewModel.toggleFavortie(item: character)
                             }
-         
+                    }
                 }
-                .font(.system(size: 14))
-                .padding()
-                .frame(
-                    minWidth: 0,
-                    maxWidth: .infinity,
-                    minHeight: 0,
-                    maxHeight: .infinity,
-                    alignment: .leading
-                )
-                Spacer()
+                
             }
-            .frame(height: 120)
+            .font(.system(size: 14))
+            .padding()
+            .frame(minWidth: 0,maxWidth: .infinity,minHeight: 0,maxHeight: .infinity,alignment: .leading
+            )
+            .shadow(color: Color.black.opacity(0.2), radius: 30, x: 0, y: 0)
+            
+            RoundedRectangle(cornerRadius: 20)
+                .fill(
+                    LinearGradient(
+                        colors: [Color.orange, Color.blue],
+                        startPoint: .topLeading,
+                        endPoint: .bottomTrailing))
+                    
+                .opacity(0.1)
+                    
+                .frame(maxWidth: .infinity, maxHeight: 130)
         }
-        .padding(.horizontal)
-        .padding(.vertical, 8)
+        
+        
+        
+       
     }
 }
+

@@ -24,6 +24,7 @@ final class TabRouter: ObservableObject {
 
 @main
 struct AsyncImageCahcingWithGenericJsonApiApp: App {
+
     
     @StateObject private var vm = HomeViewModel()
     @StateObject var router = TabRouter()
@@ -31,25 +32,23 @@ struct AsyncImageCahcingWithGenericJsonApiApp: App {
     var body: some Scene {
         
         WindowGroup {
-            NavigationStack {
-       
-                
-                TabView(selection: $router.screen) {
-                    
+            
+            TabView(selection: $router.screen) {
+      
                     HomeView()
                         .badge(8)
                         .tag(Screen.home)
                         .environmentObject(router)  //necessary for changing  screens with a button
                     
                         .tabItem {
-                            Label("SCREEN HOME", image: "house")
+                            Label("SCREEN HOME", systemImage: "square.and.pencil")
                             
                         }
                     
                     ScreenOne()
                         .tag(Screen.one)
                         .tabItem {
-                            Label("Screen 1", image: "calender")
+                            Label("Screen 1", systemImage: "square.and.arrow.up.circle")
                             
                         }
                     
@@ -59,15 +58,13 @@ struct AsyncImageCahcingWithGenericJsonApiApp: App {
                         .tag(Screen.two)
                         .environmentObject(router) // necessary for changing  screens with a button
                         .tabItem {
-                            Label("Screen 2", image: "house")
-                            
+                            Label("Screen 2", systemImage: "trash.slash.circle")
                             
                         }
+                  
                 }
-    
-            }
+
             .environmentObject(vm)
-        }
-        
+            }
     }
 }

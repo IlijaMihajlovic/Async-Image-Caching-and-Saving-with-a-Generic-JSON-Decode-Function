@@ -27,6 +27,7 @@ struct ScreenTwo: View {
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(.yellow)
         .clipped()
+
         
 //        onAppear {
 //            dismissSearch()
