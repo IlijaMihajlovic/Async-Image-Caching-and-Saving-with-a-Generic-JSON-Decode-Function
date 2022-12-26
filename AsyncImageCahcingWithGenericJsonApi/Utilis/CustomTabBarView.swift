@@ -9,43 +9,48 @@ import SwiftUI
 import PhotosUI
 
 
-struct CustomTabView: View {
+struct CustomTabBarView: View {
     
-    @StateObject var photosModel: PhotosPickerModel = .init()
+    @StateObject var photosModel: PhotosPickerViewModel = .init()
     
-    @Binding var selectedTab: Tab
+    @Binding var selectedTab: CustomTabBar
     
     var body: some View {
+        
         HStack {
             Spacer()
+            
             Button {
-                selectedTab = .map
+                selectedTab = .homeButton
             } label: {
                 VStack {
-                    Image(systemName: "map")
+                    Image(systemName: "house")
                         .resizable()
                         .scaledToFit()
-                        .frame(width: 25, height: 25)
-                    Text("Map")
+                        .frame(width: 30, height: 30)
+        
+                    Text("Home")
                         .font(.caption2)
                 }
-                .foregroundColor(selectedTab == .map ? .blue : .primary)
+                .foregroundColor(selectedTab == .homeButton ? .primary : .gray)
             }
-            .frame(width: 60, height: 50)
-            Spacer()
+            .frame(width: 50, height: 50)
             
+            Spacer()
           
             PhotosPicker(selection: $photosModel.selectedPhoto, matching: .any(of: [.images]), photoLibrary: .shared()) {
                 
-                ZStack {
+                ZStack(alignment: .center) {
                     Circle()
                         .foregroundColor(.secondary)
                         .frame(width: 60, height: 60)
                         .shadow(radius: 2)
+                      
                     Image(systemName: "plus.circle.fill")
                         .resizable()
                         .foregroundColor(.primary)
-                        .frame(width: 50, height: 50)
+                        .frame(width: 60, height: 60)
+                       
                     
                         .font(.callout)
                 }
@@ -55,19 +60,20 @@ struct CustomTabView: View {
             Spacer()
             
             Button {
-                selectedTab = .recorded
+                selectedTab = .secondScreenButton
             } label: {
                 VStack {
                     Image(systemName: "chart.bar")
                         .resizable()
                         .scaledToFit()
                         .frame(width: 25, height: 25)
-                    Text("Recorded")
+                    Text("Second")
                         .font(.caption2)
                 }
-                .foregroundColor(selectedTab == .recorded ? .blue : .primary)
+                .foregroundColor(selectedTab == .secondScreenButton ? .primary : .gray)
             }
-            .frame(width: 60, height: 50)
+            .frame(width: 50, height: 50)
+            .padding(20)
             Spacer()
         }
     }

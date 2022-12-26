@@ -7,16 +7,12 @@
 
 import SwiftUI
 
-
-
-
 @main
 struct AsyncImageCahcingWithGenericJsonApiApp: App {
     
-    
     @StateObject private var vm = HomeViewModel()
     
-    @State private var selectedTab: Tab = .map
+    @State private var selectedTab: CustomTabBar = .homeButton
     
     var body: some Scene {
         
@@ -26,17 +22,17 @@ struct AsyncImageCahcingWithGenericJsonApiApp: App {
                 
                 switch selectedTab {
                     
-                case .map:
+                case .homeButton:
                     NavigationView {
                         HomeView()
                     }
-                case .recorded:
+                case .secondScreenButton:
                     NavigationView {
                         ScreenOne()
                     }
                 }
-                CustomTabView(selectedTab: $selectedTab)
-                    .frame(height: 50)
+                CustomTabBarView(selectedTab: $selectedTab)
+                    .frame(height: 30)
             }
             
             

@@ -8,7 +8,7 @@
 import Foundation
 
 
-enum Tab {
-    case map
-    case recorded
+enum CustomTabBar {
+    case homeButton
+    case secondScreenButton
 }

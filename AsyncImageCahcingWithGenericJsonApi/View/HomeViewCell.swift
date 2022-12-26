@@ -26,7 +26,7 @@ struct HomeViewCell: View {
                         
                         // TODO: - Change Dimensions
                             .frame(width: SCREEN_SIZE.width / 3, height: 100)
-                            .background(.blue, in: RoundedRectangle(cornerRadius: 8,
+                            .background(.gray, in: RoundedRectangle(cornerRadius: 8,
                                                                     style: .continuous))
                         
                     case .success(let image):
