@@ -3,6 +3,8 @@ import Foundation
 import Alamofire
 
 
+//TODO: - Implement Image Uploading
+
 func uploadImage(imgType:String,imgData:Data,imageName:String){
         // params to send additional data, for eg. AccessToken or userUserId
         let params = ["userID":"userId","accessToken":"your accessToken"]

@@ -1,5 +1,5 @@
 //
-//  Mediafile.swift
+//  PhotoPickerModel.swift
 //  AsyncImageCahcingWithGenericJsonApi
 //
 //  Created by Ilija Mihajlovic on 26.12.22.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct MediaFile: Identifiable {
+struct PhotoPickerModel: Identifiable {
     
     var id: String = UUID().uuidString
     var image: Image
