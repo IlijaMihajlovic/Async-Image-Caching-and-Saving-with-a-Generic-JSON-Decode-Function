@@ -6,20 +6,15 @@
 //
 
 import SwiftUI
-import UIKit
-import PhotosUI
 
 struct HomeView: View {
     
-    
     @StateObject var viewModel = HomeViewModel()
     @State private var query = ""
-    @StateObject var photosModel: PhotosPickerModel = .init()
     
     var body: some View {
         
         NavigationStack() {
-     
             
             ScrollView(showsIndicators: false) {
                 
@@ -30,14 +25,13 @@ struct HomeView: View {
                         NavigationLink(value: character) {
                             HomeViewCell(character: character)
                             
-                            
                         }
                         
                     }
-
+                    
                 }
                 .padding()
-
+                
                 .alert("", isPresented: $viewModel.hasError) {} message: {
                     Text(viewModel.errorMessage)
                 }
@@ -45,19 +39,7 @@ struct HomeView: View {
             
             .searchable(text: $query,placement: .navigationBarDrawer, prompt: "Find a person")
             
-            .navigationBarTitleDisplayMode(.automatic)
-            
             .navigationTitle("Rick & Morty API")
-            
-            .toolbar {
-                
-                PhotosPicker(selection: $photosModel.selectedPhoto, matching: .any(of: [.images])) {
-                    
-                    Image(systemName: "photo.fill")
-                        .font(.callout)
-                }
-            }
-       
             
             .navigationDestination(for: Character.self) { dest in
                 
@@ -65,14 +47,7 @@ struct HomeView: View {
                 
             }
             
-
-        }
- 
-        
-       
-
-        .onAppear {
-            tabBarBlueAppearanceHelper()
+            
         }
         
         .task {
@@ -90,16 +65,17 @@ struct HomeView: View {
         }
         
         .overlay {
-            
+
             if viewModel.filteredData.isEmpty {
                 EmptyViewForSearch(query: $query)
                 
             }
         }
         
-        
     }
+
 }
+
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {

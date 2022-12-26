@@ -10,11 +10,12 @@
 		2401FFCE2954A52900CF36E1 /* ScreenOne.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2401FFCD2954A52900CF36E1 /* ScreenOne.swift */; };
 		2401FFD02954A53000CF36E1 /* ScreenTwo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2401FFCF2954A53000CF36E1 /* ScreenTwo.swift */; };
 		240896302950BC3C00AD15CE /* EmptyViewForSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2408962F2950BC3C00AD15CE /* EmptyViewForSearch.swift */; };
-		2413008F2955CF9700CC0CE2 /* UITabBarAppearanceBlur.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2413008E2955CF9700CC0CE2 /* UITabBarAppearanceBlur.swift */; };
 		2436180D294F548900ACB662 /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2436180C294F548900ACB662 /* Database.swift */; };
 		248A32B92959F10E0036DFD5 /* PhotosPickerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 248A32B82959F10E0036DFD5 /* PhotosPickerModel.swift */; };
+		248A32BB295A04270036DFD5 /* Mediafile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 248A32BA295A04270036DFD5 /* Mediafile.swift */; };
+		248A32BD295A10C00036DFD5 /* MultipartRequestURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 248A32BC295A10C00036DFD5 /* MultipartRequestURLSession.swift */; };
+		248A32F6295A17CA0036DFD5 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 248A32F5295A17CA0036DFD5 /* Alamofire */; };
 		24C7F23E294DC2360021BAB1 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C7F23D294DC2360021BAB1 /* DetailView.swift */; };
-		24C7F240294DC29D0021BAB1 /* NavigationPathRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C7F23F294DC29D0021BAB1 /* NavigationPathRouter.swift */; };
 		24CC93722949FD7F00495FF1 /* AsyncImageCahcingWithGenericJsonApiApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24CC93712949FD7F00495FF1 /* AsyncImageCahcingWithGenericJsonApiApp.swift */; };
 		24CC93762949FD8000495FF1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 24CC93752949FD8000495FF1 /* Assets.xcassets */; };
 		24CC937A2949FD8000495FF1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 24CC93792949FD8000495FF1 /* Preview Assets.xcassets */; };
@@ -37,11 +38,11 @@
 		2401FFCD2954A52900CF36E1 /* ScreenOne.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenOne.swift; sourceTree = "<group>"; };
 		2401FFCF2954A53000CF36E1 /* ScreenTwo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenTwo.swift; sourceTree = "<group>"; };
 		2408962F2950BC3C00AD15CE /* EmptyViewForSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyViewForSearch.swift; sourceTree = "<group>"; };
-		2413008E2955CF9700CC0CE2 /* UITabBarAppearanceBlur.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITabBarAppearanceBlur.swift; sourceTree = "<group>"; };
 		2436180C294F548900ACB662 /* Database.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
 		248A32B82959F10E0036DFD5 /* PhotosPickerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosPickerModel.swift; sourceTree = "<group>"; };
+		248A32BA295A04270036DFD5 /* Mediafile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mediafile.swift; sourceTree = "<group>"; };
+		248A32BC295A10C00036DFD5 /* MultipartRequestURLSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipartRequestURLSession.swift; sourceTree = "<group>"; };
 		24C7F23D294DC2360021BAB1 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
-		24C7F23F294DC29D0021BAB1 /* NavigationPathRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationPathRouter.swift; sourceTree = "<group>"; };
 		24CC936E2949FD7F00495FF1 /* AsyncImageCahcingWithGenericJsonApi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AsyncImageCahcingWithGenericJsonApi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		24CC93712949FD7F00495FF1 /* AsyncImageCahcingWithGenericJsonApiApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncImageCahcingWithGenericJsonApiApp.swift; sourceTree = "<group>"; };
 		24CC93752949FD8000495FF1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -66,6 +67,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				248A32F6295A17CA0036DFD5 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,7 +77,6 @@
 		2436180B294F547800ACB662 /* Test */ = {
 			isa = PBXGroup;
 			children = (
-				2436180C294F548900ACB662 /* Database.swift */,
 			);
 			path = Test;
 			sourceTree = "<group>";
@@ -83,7 +84,6 @@
 		248A32B42959EEEB0036DFD5 /* PhotosPicker */ = {
 			isa = PBXGroup;
 			children = (
-				248A32B72959F01A0036DFD5 /* View */,
 				248A32B62959F0140036DFD5 /* Model */,
 				248A32B52959F00C0036DFD5 /* ViewModel */,
 			);
@@ -101,15 +101,9 @@
 		248A32B62959F0140036DFD5 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				248A32BA295A04270036DFD5 /* Mediafile.swift */,
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		248A32B72959F01A0036DFD5 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		24BB21202954644C0074F0D3 /* CustomTabBar */ = {
@@ -176,9 +170,9 @@
 		24CC9381294A1D1F00495FF1 /* Utilis */ = {
 			isa = PBXGroup;
 			children = (
-				24C7F23F294DC29D0021BAB1 /* NavigationPathRouter.swift */,
+				2436180C294F548900ACB662 /* Database.swift */,
 				24CC9382294A1D3F00495FF1 /* Constants.swift */,
-				2413008E2955CF9700CC0CE2 /* UITabBarAppearanceBlur.swift */,
+				248A32BC295A10C00036DFD5 /* MultipartRequestURLSession.swift */,
 			);
 			path = Utilis;
 			sourceTree = "<group>";
@@ -239,6 +233,9 @@
 			dependencies = (
 			);
 			name = AsyncImageCahcingWithGenericJsonApi;
+			packageProductDependencies = (
+				248A32F5295A17CA0036DFD5 /* Alamofire */,
+			);
 			productName = AsyncImageCahcingWithGenericJsonApi;
 			productReference = 24CC936E2949FD7F00495FF1 /* AsyncImageCahcingWithGenericJsonApi.app */;
 			productType = "com.apple.product-type.application";
@@ -267,6 +264,9 @@
 				Base,
 			);
 			mainGroup = 24CC93652949FD7F00495FF1;
+			packageReferences = (
+				248A32F4295A17CA0036DFD5 /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = 24CC936F2949FD7F00495FF1 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -293,7 +293,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				24C7F240294DC29D0021BAB1 /* NavigationPathRouter.swift in Sources */,
 				24E4802E294A29B300C83437 /* ImageCache.swift in Sources */,
 				24E4802F294A29B300C83437 /* CachedImageManager.swift in Sources */,
 				24E48024294A298100C83437 /* HomeView.swift in Sources */,
@@ -302,8 +301,8 @@
 				24CC93A0294A215800495FF1 /* Character.swift in Sources */,
 				240896302950BC3C00AD15CE /* EmptyViewForSearch.swift in Sources */,
 				24E48031294A29B300C83437 /* FileStorageManager.swift in Sources */,
-				2413008F2955CF9700CC0CE2 /* UITabBarAppearanceBlur.swift in Sources */,
 				24E48022294A297500C83437 /* HomeViewCell.swift in Sources */,
+				248A32BB295A04270036DFD5 /* Mediafile.swift in Sources */,
 				24CC9388294A1D7100495FF1 /* AsyncGenericApi.swift in Sources */,
 				24CC939B294A1FA100495FF1 /* HomeViewModel.swift in Sources */,
 				2401FFCE2954A52900CF36E1 /* ScreenOne.swift in Sources */,
@@ -314,6 +313,7 @@
 				24CC9383294A1D3F00495FF1 /* Constants.swift in Sources */,
 				24C7F23E294DC2360021BAB1 /* DetailView.swift in Sources */,
 				2401FFD02954A53000CF36E1 /* ScreenTwo.swift in Sources */,
+				248A32BD295A10C00036DFD5 /* MultipartRequestURLSession.swift in Sources */,
 				24CC938A294A1D7100495FF1 /* ApiError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -528,6 +528,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		248A32F4295A17CA0036DFD5 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		248A32F5295A17CA0036DFD5 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 248A32F4295A17CA0036DFD5 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 24CC93662949FD7F00495FF1 /* Project object */;
 }

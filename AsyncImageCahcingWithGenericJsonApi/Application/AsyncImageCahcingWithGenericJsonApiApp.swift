@@ -13,7 +13,6 @@ enum Tab {
     case recorded
 }
 
-
 @main
 struct AsyncImageCahcingWithGenericJsonApiApp: App {
     
@@ -75,7 +74,7 @@ struct AsyncImageCahcingWithGenericJsonApiApp: App {
                 Spacer()
                 
                 
-                PhotosPicker(selection: $photosModel.selectedPhoto, matching: .any(of: [.images])) {
+                PhotosPicker(selection: $photosModel.selectedPhoto, matching: .any(of: [.images]), photoLibrary: .shared()) {
                     
                     ZStack {
                         Circle()

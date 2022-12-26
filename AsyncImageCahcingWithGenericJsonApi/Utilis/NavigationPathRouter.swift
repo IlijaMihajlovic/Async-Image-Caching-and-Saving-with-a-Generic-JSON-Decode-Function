@@ -9,14 +9,14 @@ import Foundation
 import SwiftUI
 
 //Create an application router for the NavigationStack.
-final class NavigationPathRouter: ObservableObject {
-    @Published var path = NavigationPath()
-    
-    func gotoHomePage() {
-        path.removeLast(path.count)
-    }
-    
-    func tapOnSecondPage() {
-        path.removeLast()
-    }
-}
+//final class NavigationPathRouter: ObservableObject {
+//    @Published var path = NavigationPath()
+//    
+//    func gotoHomePage() {
+//        path.removeLast(path.count)
+//    }
+//    
+//    func tapOnSecondPage() {
+//        path.removeLast()
+//    }
+//}
