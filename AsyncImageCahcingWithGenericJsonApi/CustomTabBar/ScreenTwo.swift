@@ -9,15 +9,15 @@ import SwiftUI
 
 struct ScreenTwo: View {
     
-    //necessary only for changing screens with a button
-    @EnvironmentObject var router: TabRouter
+
+
 
 
     var body: some View {
         ZStack {
 
             Button {
-            router.change(to: .one)
+            
             } label: {
               
                 Text("Switch to Screen one")
@@ -40,6 +40,6 @@ struct ScreenTwo: View {
 struct ScreenTwo_Previews: PreviewProvider {
     static var previews: some View {
         ScreenTwo()
-            .environmentObject(TabRouter())
+           
     }
 }

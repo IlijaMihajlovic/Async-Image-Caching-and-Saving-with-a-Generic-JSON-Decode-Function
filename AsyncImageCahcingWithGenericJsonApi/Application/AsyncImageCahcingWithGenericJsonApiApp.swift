@@ -6,65 +6,111 @@
 //
 
 import SwiftUI
+import PhotosUI
 
-enum Screen {
-    case one
-    case two
-    case home
+enum Tab {
+    case map
+    case recorded
 }
 
-final class TabRouter: ObservableObject {
-    
-    @Published var screen: Screen = .home
-    
-    func change(to screen: Screen) {
-        self.screen = screen
-    }
-}
 
 @main
 struct AsyncImageCahcingWithGenericJsonApiApp: App {
-
+    
     
     @StateObject private var vm = HomeViewModel()
-    @StateObject var router = TabRouter()
+    
+    @State private var selectedTab: Tab = .map
     
     var body: some Scene {
         
         WindowGroup {
-            
-            TabView(selection: $router.screen) {
-      
-                    HomeView()
-                        .badge(8)
-                        .tag(Screen.home)
-                        .environmentObject(router)  //necessary for changing  screens with a button
+   
+            VStack {
+                
+                switch selectedTab {
                     
-                        .tabItem {
-                            Label("SCREEN HOME", systemImage: "square.and.pencil")
-                            
-                        }
-                    
-                    ScreenOne()
-                        .tag(Screen.one)
-                        .tabItem {
-                            Label("Screen 1", systemImage: "square.and.arrow.up.circle")
-                            
-                        }
-                    
-                    
-                    
-                    ScreenTwo()
-                        .tag(Screen.two)
-                        .environmentObject(router) // necessary for changing  screens with a button
-                        .tabItem {
-                            Label("Screen 2", systemImage: "trash.slash.circle")
-                            
-                        }
-                  
+                case .map:
+                    NavigationView {
+                        HomeView()
+                    }
+                case .recorded:
+                    NavigationView {
+                        ScreenOne()
+                    }
                 }
-
-            .environmentObject(vm)
+                CustomTabView(selectedTab: $selectedTab)
+                    .frame(height: 50)
             }
+            
+            
+            
+            .environmentObject(vm)
+        }
+        
     }
+ 
+    struct CustomTabView: View {
+        @StateObject var photosModel: PhotosPickerModel = .init()
+        
+        @Binding var selectedTab: Tab
+        
+        var body: some View {
+            HStack {
+                Spacer()
+                Button {
+                    selectedTab = .map
+                } label: {
+                    VStack {
+                        Image(systemName: "map")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 25, height: 25)
+                        Text("Map")
+                            .font(.caption2)
+                    }
+                    .foregroundColor(selectedTab == .map ? .blue : .primary)
+                }
+                .frame(width: 60, height: 50)
+                Spacer()
+                
+                
+                PhotosPicker(selection: $photosModel.selectedPhoto, matching: .any(of: [.images])) {
+                    
+                    ZStack {
+                        Circle()
+                            .foregroundColor(.secondary)
+                            .frame(width: 60, height: 60)
+                            .shadow(radius: 2)
+                        Image(systemName: "plus.circle.fill")
+                            .resizable()
+                            .foregroundColor(.primary)
+                            .frame(width: 50, height: 50)
+                        
+                            .font(.callout)
+                    }
+                    .offset(y: -2)
+                }
+                
+                Spacer()
+                
+                Button {
+                    selectedTab = .recorded
+                } label: {
+                    VStack {
+                        Image(systemName: "chart.bar")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 25, height: 25)
+                        Text("Recorded")
+                            .font(.caption2)
+                    }
+                    .foregroundColor(selectedTab == .recorded ? .blue : .primary)
+                }
+                .frame(width: 60, height: 50)
+                Spacer()
+            }
+        }
+    }
+    
 }

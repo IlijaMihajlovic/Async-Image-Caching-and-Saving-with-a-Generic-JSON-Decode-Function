@@ -9,7 +9,6 @@ import SwiftUI
 
 struct ScreenOne: View {
     @State private var query = ""
-    @EnvironmentObject var router: TabRouter
     
     
 //    @Environment(\.dismiss) private var dismiss

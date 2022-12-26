@@ -7,12 +7,14 @@
 
 import SwiftUI
 import UIKit
+import PhotosUI
 
 struct HomeView: View {
     
     
     @StateObject var viewModel = HomeViewModel()
     @State private var query = ""
+    @StateObject var photosModel: PhotosPickerModel = .init()
     
     var body: some View {
         
@@ -46,6 +48,15 @@ struct HomeView: View {
             .navigationBarTitleDisplayMode(.automatic)
             
             .navigationTitle("Rick & Morty API")
+            
+            .toolbar {
+                
+                PhotosPicker(selection: $photosModel.selectedPhoto, matching: .any(of: [.images])) {
+                    
+                    Image(systemName: "photo.fill")
+                        .font(.callout)
+                }
+            }
        
             
             .navigationDestination(for: Character.self) { dest in
