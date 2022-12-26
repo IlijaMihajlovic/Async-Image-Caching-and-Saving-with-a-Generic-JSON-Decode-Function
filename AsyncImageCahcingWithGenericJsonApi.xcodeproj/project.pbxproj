@@ -78,6 +78,37 @@
 			path = Test;
 			sourceTree = "<group>";
 		};
+		248A32B42959EEEB0036DFD5 /* PhotosPicker */ = {
+			isa = PBXGroup;
+			children = (
+				248A32B72959F01A0036DFD5 /* View */,
+				248A32B62959F0140036DFD5 /* Model */,
+				248A32B52959F00C0036DFD5 /* ViewModel */,
+			);
+			path = PhotosPicker;
+			sourceTree = "<group>";
+		};
+		248A32B52959F00C0036DFD5 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		248A32B62959F0140036DFD5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		248A32B72959F01A0036DFD5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		24BB21202954644C0074F0D3 /* CustomTabBar */ = {
 			isa = PBXGroup;
 			children = (
@@ -112,6 +143,7 @@
 				24CC939E294A207400495FF1 /* Model */,
 				24BB21202954644C0074F0D3 /* CustomTabBar */,
 				24CC9380294A1B0400495FF1 /* View */,
+				248A32B42959EEEB0036DFD5 /* PhotosPicker */,
 				2436180B294F547800ACB662 /* Test */,
 				24CC9381294A1D1F00495FF1 /* Utilis */,
 				24CC93782949FD8000495FF1 /* Preview Content */,
