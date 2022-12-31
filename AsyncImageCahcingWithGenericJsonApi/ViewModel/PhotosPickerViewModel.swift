@@ -10,7 +10,7 @@ import PhotosUI
 
 class PhotosPickerViewModel: ObservableObject {
     
-    @Published var loadedImage: [PhotoPickerModel] = []
+    @Published var loadedImage: [PhotoPicker] = []
     
     @Published var selectedPhoto: PhotosPickerItem? {
         didSet {

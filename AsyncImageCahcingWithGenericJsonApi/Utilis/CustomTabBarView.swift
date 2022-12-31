@@ -58,7 +58,6 @@ struct CustomTabBarView: View {
             }
             
             Spacer()
-            
             Button {
                 selectedTab = .secondScreenButton
             } label: {
