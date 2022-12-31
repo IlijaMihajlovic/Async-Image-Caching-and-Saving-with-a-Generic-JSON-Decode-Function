@@ -27,6 +27,7 @@
 		24CC938A294A1D7100495FF1 /* ApiError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24CC9387294A1D7100495FF1 /* ApiError.swift */; };
 		24CC939B294A1FA100495FF1 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24CC939A294A1FA100495FF1 /* HomeViewModel.swift */; };
 		24CC93A0294A215800495FF1 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24CC939F294A215800495FF1 /* Character.swift */; };
+		24D7AB2C29604D580012EEE6 /* CustomTabBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D7AB2B29604D580012EEE6 /* CustomTabBarButton.swift */; };
 		24E48022294A297500C83437 /* HomeViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24E48021294A297500C83437 /* HomeViewCell.swift */; };
 		24E48024294A298100C83437 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24E48023294A298100C83437 /* HomeView.swift */; };
 		24E4802D294A29B300C83437 /* CachedImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24E48028294A29B300C83437 /* CachedImage.swift */; };
@@ -57,6 +58,7 @@
 		24CC9387294A1D7100495FF1 /* ApiError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiError.swift; sourceTree = "<group>"; };
 		24CC939A294A1FA100495FF1 /* HomeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		24CC939F294A215800495FF1 /* Character.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
+		24D7AB2B29604D580012EEE6 /* CustomTabBarButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarButton.swift; sourceTree = "<group>"; };
 		24E48021294A297500C83437 /* HomeViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewCell.swift; sourceTree = "<group>"; };
 		24E48023294A298100C83437 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		24E48028294A29B300C83437 /* CachedImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CachedImage.swift; sourceTree = "<group>"; };
@@ -153,6 +155,7 @@
 				2436180C294F548900ACB662 /* Database.swift */,
 				24CC9382294A1D3F00495FF1 /* Constants.swift */,
 				248A32BC295A10C00036DFD5 /* MultipartRequestURLSession.swift */,
+				24D7AB2B29604D580012EEE6 /* CustomTabBarButton.swift */,
 				248A32F7295A25BC0036DFD5 /* CustomTabBarView.swift */,
 				248A32F9295A26F80036DFD5 /* TabPhotoPicker.swift */,
 			);
@@ -290,6 +293,7 @@
 				248A32F8295A25BC0036DFD5 /* CustomTabBarView.swift in Sources */,
 				248A32FA295A26F80036DFD5 /* TabPhotoPicker.swift in Sources */,
 				2401FFCE2954A52900CF36E1 /* ScreenOne.swift in Sources */,
+				24D7AB2C29604D580012EEE6 /* CustomTabBarButton.swift in Sources */,
 				24CC93722949FD7F00495FF1 /* AsyncImageCahcingWithGenericJsonApiApp.swift in Sources */,
 				24CC9389294A1D7100495FF1 /* Client.swift in Sources */,
 				24E48030294A29B300C83437 /* ImageRetriver.swift in Sources */,

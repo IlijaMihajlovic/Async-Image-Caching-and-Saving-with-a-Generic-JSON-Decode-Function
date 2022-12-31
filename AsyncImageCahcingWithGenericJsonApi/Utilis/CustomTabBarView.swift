@@ -18,26 +18,17 @@ struct CustomTabBarView: View {
     var body: some View {
         
         HStack {
-            Spacer()
             
             Button {
                 selectedTab = .homeButton
             } label: {
-                VStack {
-                    Image(systemName: "house")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 30, height: 30)
-        
-                    Text("Home")
-                        .font(.caption2)
-                }
+                
+                CustomTabBarButton(buttonText: "Home", imageName: "house", isActive: selectedTab == .homeButton)
+                
+                
                 .foregroundColor(selectedTab == .homeButton ? .primary : .gray)
             }
-            .frame(width: 50, height: 50)
             
-            Spacer()
-          
             PhotosPicker(selection: $photosModel.selectedPhoto, matching: .any(of: [.images]), photoLibrary: .shared()) {
                 
                 ZStack(alignment: .center) {
@@ -45,12 +36,12 @@ struct CustomTabBarView: View {
                         .foregroundColor(.secondary)
                         .frame(width: 60, height: 60)
                         .shadow(radius: 2)
-                      
+                    
                     Image(systemName: "plus.circle.fill")
                         .resizable()
                         .foregroundColor(.primary)
                         .frame(width: 60, height: 60)
-                       
+                    
                     
                         .font(.callout)
                 }
@@ -58,23 +49,26 @@ struct CustomTabBarView: View {
             }
             
             Spacer()
+            
             Button {
                 selectedTab = .secondScreenButton
+                
             } label: {
-                VStack {
-                    Image(systemName: "chart.bar")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 25, height: 25)
-                    Text("Second")
-                        .font(.caption2)
-                }
+                
+                CustomTabBarButton(buttonText: "Second", imageName: "chart.bar", isActive: selectedTab == .secondScreenButton)
+                
                 .foregroundColor(selectedTab == .secondScreenButton ? .primary : .gray)
             }
-            .frame(width: 50, height: 50)
-            .padding(20)
-            Spacer()
+            
         }
+        .frame(height: 60)
+    }
+}
+
+struct CustomTabBarView_Preview: PreviewProvider {
+    
+    static var previews: some View {
+        CustomTabBarView(selectedTab: .constant(.homeButton))
     }
 }
 
