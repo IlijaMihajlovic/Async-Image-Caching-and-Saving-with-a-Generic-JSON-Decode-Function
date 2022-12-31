@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2401FFCE2954A52900CF36E1 /* ScreenOne.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2401FFCD2954A52900CF36E1 /* ScreenOne.swift */; };
 		240896302950BC3C00AD15CE /* EmptyViewForSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2408962F2950BC3C00AD15CE /* EmptyViewForSearch.swift */; };
+		240A8A44296095060045B544 /* ScreenTwo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240A8A43296095060045B544 /* ScreenTwo.swift */; };
+		240A8A4629609DB90045B544 /* CustomColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240A8A4529609DB90045B544 /* CustomColor.swift */; };
 		2436180D294F548900ACB662 /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2436180C294F548900ACB662 /* Database.swift */; };
 		248A32B92959F10E0036DFD5 /* PhotosPickerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 248A32B82959F10E0036DFD5 /* PhotosPickerViewModel.swift */; };
 		248A32BB295A04270036DFD5 /* PhotoPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 248A32BA295A04270036DFD5 /* PhotoPicker.swift */; };
@@ -36,8 +37,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		2401FFCD2954A52900CF36E1 /* ScreenOne.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenOne.swift; sourceTree = "<group>"; };
 		2408962F2950BC3C00AD15CE /* EmptyViewForSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyViewForSearch.swift; sourceTree = "<group>"; };
+		240A8A43296095060045B544 /* ScreenTwo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScreenTwo.swift; sourceTree = "<group>"; };
+		240A8A4529609DB90045B544 /* CustomColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomColor.swift; sourceTree = "<group>"; };
 		2436180C294F548900ACB662 /* Database.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
 		248A32B82959F10E0036DFD5 /* PhotosPickerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosPickerViewModel.swift; sourceTree = "<group>"; };
 		248A32BA295A04270036DFD5 /* PhotoPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPicker.swift; sourceTree = "<group>"; };
@@ -88,7 +90,7 @@
 		24BB21202954644C0074F0D3 /* CustomTabBarView */ = {
 			isa = PBXGroup;
 			children = (
-				2401FFCD2954A52900CF36E1 /* ScreenOne.swift */,
+				240A8A43296095060045B544 /* ScreenTwo.swift */,
 			);
 			path = CustomTabBarView;
 			sourceTree = "<group>";
@@ -118,7 +120,7 @@
 				248A32FB295A28560036DFD5 /* ViewModel */,
 				24CC939E294A207400495FF1 /* Model */,
 				24CC9380294A1B0400495FF1 /* View */,
-				24CC9381294A1D1F00495FF1 /* Utilis */,
+				24CC9381294A1D1F00495FF1 /* Utilities */,
 				24CC93782949FD8000495FF1 /* Preview Content */,
 			);
 			path = AsyncImageCahcingWithGenericJsonApi;
@@ -144,7 +146,7 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		24CC9381294A1D1F00495FF1 /* Utilis */ = {
+		24CC9381294A1D1F00495FF1 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
 				2436180C294F548900ACB662 /* Database.swift */,
@@ -152,8 +154,9 @@
 				24D7AB2B29604D580012EEE6 /* CustomTabBarButton.swift */,
 				248A32F7295A25BC0036DFD5 /* CustomTabBarView.swift */,
 				248A32F9295A26F80036DFD5 /* CustomTabBar.swift */,
+				240A8A4529609DB90045B544 /* CustomColor.swift */,
 			);
-			path = Utilis;
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 		24CC9384294A1D4E00495FF1 /* Networking */ = {
@@ -286,7 +289,8 @@
 				24CC939B294A1FA100495FF1 /* HomeViewModel.swift in Sources */,
 				248A32F8295A25BC0036DFD5 /* CustomTabBarView.swift in Sources */,
 				248A32FA295A26F80036DFD5 /* CustomTabBar.swift in Sources */,
-				2401FFCE2954A52900CF36E1 /* ScreenOne.swift in Sources */,
+				240A8A4629609DB90045B544 /* CustomColor.swift in Sources */,
+				240A8A44296095060045B544 /* ScreenTwo.swift in Sources */,
 				24D7AB2C29604D580012EEE6 /* CustomTabBarButton.swift in Sources */,
 				24CC93722949FD7F00495FF1 /* AsyncImageCahcingWithGenericJsonApiApp.swift in Sources */,
 				24CC9389294A1D7100495FF1 /* Client.swift in Sources */,

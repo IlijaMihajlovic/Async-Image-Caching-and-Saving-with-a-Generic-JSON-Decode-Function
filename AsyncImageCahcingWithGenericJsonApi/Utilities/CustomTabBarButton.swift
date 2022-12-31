@@ -20,7 +20,7 @@ struct CustomTabBarButton: View {
             if isActive {
                 
                 Rectangle()
-                    .foregroundColor(.orange)
+                    .foregroundColor(.newCustomLightOrange)
                 // Puts the select recntagle in the middel
                     .frame(width: geo.size.width/2, height: 4)
                     .padding(.leading, geo.size.width/4)

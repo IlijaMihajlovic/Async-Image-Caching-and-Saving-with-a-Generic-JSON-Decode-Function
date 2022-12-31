@@ -7,17 +7,26 @@
 
 import SwiftUI
 
-
-import UIKit
-
-
-
-
 struct HomeView: View {
+    
+    //MARK: - Properties
     
     @StateObject var viewModel = HomeViewModel()
     @State private var query = ""
     
+    
+    //MARK: - Init
+    
+    init() {
+        //Use this if NavigationBarTitle is with Large Font
+        UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor.gray]
+        
+        //Use this if NavigationBarTitle is with displayMode = .inline
+        UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor.customLightGray]
+        
+    }
+    
+    //MARK: - Body
     var body: some View {
         
         NavigationStack() {
@@ -35,101 +44,43 @@ struct HomeView: View {
                         
                     }
                     
-               
-                
-                .alert("", isPresented: $viewModel.hasError) {} message: {
-                    Text(viewModel.errorMessage)
-                }
+                    .alert("", isPresented: $viewModel.hasError) {} message: {
+                        Text(viewModel.errorMessage)
+                    }
                     
-            }
-            
-            .searchable(text: $query,placement: .navigationBarDrawer, prompt: "Find a person")
-            
-            .navigationTitle("Rick & Morty API")
-            
-            .navigationDestination(for: Character.self) { dest in
+                }
                 
-                DetailView(dest) // TODO: - Improve
+                .searchable(text: $query,placement: .navigationBarDrawer, prompt: "Find a person")
                 
-            }
-            
-            
-        }
-        
-        .task {
-            await viewModel.fetchCharacters()
-            viewModel.search()
-        }
-        
-        
-        .onSubmit(of: .search) {
-            viewModel.search(with: query)
-        }
-        
-        .onChange(of: query) { newQuery in
-            viewModel.search(with: newQuery)
-        }
-        
-        .overlay {
-
-            if viewModel.filteredData.isEmpty {
-                EmptyViewForSearch(query: $query)
+                .navigationTitle("Rick & Morty")
+                
+                .navigationDestination(for: Character.self) { dest in
+                    
+                    DetailView(dest) // TODO: - Improve
+                    
+                }
                 
             }
-        }
-        
-    }
-
-}
-
-
-
-struct FloatingButton: View {
-    @State var translation = CGSize.zero
-    
-    var fillColor = LinearGradient(
-        colors: [Color.orange, Color.blue],
-        startPoint: .topLeading,
-        endPoint: .bottomTrailing)
-    
-    var overlayImage = Image(systemName: "plus")
-    
-    
-    var body: some View {
-        ZStack {
-            Circle()
-                .fill(fillColor)
-                .overlay(overlayImage)
-                .offset(x: translation.width, y: translation.height)
-                .frame(width: 50, height: 50)
-                .gesture(
-                    DragGesture()
-                        .onChanged({ (value) in
-                            self.translation = value.translation
-                        })
-                        .onEnded({ (value) in
-                            self.translation = CGSize.zero
-                        })
-                )
-                .animation(.interpolatingSpring(stiffness: 40, damping: 40))
-            Button(action: {
-                print("Cliked")
-            }, label: {
-                Text("+")
-            })
+            
+            .task {
+                await viewModel.fetchCharacters()
+                viewModel.search()
+            }
             
             
+            .onChange(of: query) { newQuery in
+                viewModel.search(with: newQuery)
+            }
+            
+            .overlay {
+                
+                if viewModel.filteredData.isEmpty {
+                    EmptyViewForSearch(query: $query)
+                    
+                }
+            }
         }
-    }
-        
-    }
-    
-}
-
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        HomeView()
+        .accentColor(.gray)
     }
 }
-
 

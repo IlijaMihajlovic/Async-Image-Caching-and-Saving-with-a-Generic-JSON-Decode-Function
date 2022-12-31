@@ -28,7 +28,7 @@ struct AsyncImageCahcingWithGenericJsonApiApp: App {
                     }
                 case .secondScreenButton:
                     NavigationView {
-                        ScreenOne()
+                        ScreenTwo()
                     }
                 }
                 CustomTabBarView(selectedTab: $selectedTab)

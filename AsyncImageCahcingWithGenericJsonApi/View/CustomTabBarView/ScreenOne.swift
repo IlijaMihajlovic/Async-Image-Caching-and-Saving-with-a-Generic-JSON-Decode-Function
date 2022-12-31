@@ -9,21 +9,28 @@ import SwiftUI
 import PhotosUI
 
 struct ScreenOne: View {
-    //@StateObject var photosModel: PhotosPickerViewModel = .init()
-    @StateObject var photosModel = PhotosPickerViewModel()
-   
+    
+   @State var myImage: Image
+    
+    @EnvironmentObject var viewModel: HomeViewModel
+
     var body: some View {
-        
-        ZStack {
-            Text("Screen 1")
-                .bold()
-            
+
+        NavigationStack {
+            ZStack {
+                Text("Screen 1")
+                    .bold()
+                
+                ForEach(viewModel.filteredData, id: \.id) { character in
+                    
+                    Image()
+                        
+                    }
+                
+            }
             
         }
     }
-    
-     
-    
 }
 
 struct ScreenOne_Previews: PreviewProvider {

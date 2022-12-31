@@ -11,9 +11,7 @@ import PhotosUI
 
 struct CustomTabBarView: View {
     
-   // @StateObject var photosModel: PhotosPickerViewModel = .init()
-    @StateObject var photosModel = PhotosPickerViewModel()
-    
+    @StateObject var photosModel: PhotosPickerViewModel = .init()
     @Binding var selectedTab: CustomTabBar
     
     var body: some View {
@@ -27,7 +25,7 @@ struct CustomTabBarView: View {
                 CustomTabBarButton(buttonText: "Home", imageName: "house", isActive: selectedTab == .homeButton)
                 
                 
-                .foregroundColor(selectedTab == .homeButton ? .primary : .gray)
+                    .foregroundColor(selectedTab == .homeButton ? .newCustomLightOrange : .gray)
             }
             
             PhotosPicker(selection: $photosModel.selectedPhoto, matching: .any(of: [.images]), photoLibrary: .shared()) {
@@ -40,7 +38,7 @@ struct CustomTabBarView: View {
                     
                     Image(systemName: "plus.circle.fill")
                         .resizable()
-                        .foregroundColor(.primary)
+                        .foregroundColor(.newCustomLightOrange)
                         .frame(width: 60, height: 60)
                     
                     
@@ -52,18 +50,24 @@ struct CustomTabBarView: View {
             
             
             Button {
+                
                 selectedTab = .secondScreenButton
                 
             } label: {
                 
                 CustomTabBarButton(buttonText: "Second", imageName: "chart.bar", isActive: selectedTab == .secondScreenButton)
                 
-                .foregroundColor(selectedTab == .secondScreenButton ? .primary : .gray)
+                .foregroundColor(selectedTab == .secondScreenButton ? .newCustomLightOrange : .gray)
             }
-            
+         
         }
-        .frame(height: 60)
+        // Disable keyboard avoidance. Bug still exists
+        .ignoresSafeArea(.keyboard, edges: .all)
+        .frame(height: 50)
+    
+        
     }
+    
 }
 
 struct CustomTabBarView_Preview: PreviewProvider {

@@ -9,8 +9,9 @@ import SwiftUI
 
 struct HomeViewCell: View {
     
-    var character: Character
+//MARK: - Propeties
     
+    var character: Character
     @EnvironmentObject var viewModel: HomeViewModel
     
     var body: some View {
@@ -26,7 +27,7 @@ struct HomeViewCell: View {
                         
                         // TODO: - Change Dimensions
                             .frame(width: SCREEN_SIZE.width / 3, height: 100)
-                            .background(.gray, in: RoundedRectangle(cornerRadius: 8,
+                            .background(in: RoundedRectangle(cornerRadius: 8,
                                                                     style: .continuous))
                         
                     case .success(let image):

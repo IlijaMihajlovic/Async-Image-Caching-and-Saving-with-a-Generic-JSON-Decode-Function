@@ -9,23 +9,30 @@ import SwiftUI
 
 struct EmptyViewForSearch: View {
     
+    //MARK: - Properties
+    
     @Binding var query: String
     @Environment(\.dismissSearch) var dismissSearch
     @EnvironmentObject var viewModel: HomeViewModel
     
+    //MARK: - Body
     var body: some View {
-   
-        HStack() {
-            Text("We couldn't finde: \(query)")
+        
+        VStack(alignment: .leading, spacing: 8) {
             
-            Spacer()
+            HStack() {
+                Text("We couldn't finde: \(query)")
+                
+            }
+            HStack(spacing: 8) {
+                
+                Button("Clear Search") {
+                    dismissSearch()
+                    handleReset()
+                }
+                
+            }
             
-            Button("Clear Search") {
-            dismissSearch()
-            handleReset()
-        }
-            Spacer()
-      
         }
     }
     
@@ -36,8 +43,9 @@ struct EmptyViewForSearch: View {
     }
 }
 
+//MARK: - Preview
 struct EmptyViewForSearch_Previews: PreviewProvider {
     static var previews: some View {
-        EmptyViewForSearch(query: .constant("ASDADTFD"))
+        EmptyViewForSearch(query: .constant("SDSDS"))
     }
 }
