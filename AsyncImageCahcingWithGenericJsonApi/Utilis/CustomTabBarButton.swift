@@ -53,3 +53,4 @@ struct CustomTabBarButton_Previews: PreviewProvider {
         CustomTabBarButton(buttonText: "Home", imageName: "chart.bar", isActive: true)
     }
 }
+

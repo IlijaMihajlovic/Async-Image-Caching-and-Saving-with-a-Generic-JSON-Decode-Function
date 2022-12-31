@@ -7,6 +7,12 @@
 
 import SwiftUI
 
+
+import UIKit
+
+
+
+
 struct HomeView: View {
     
     @StateObject var viewModel = HomeViewModel()
@@ -29,12 +35,12 @@ struct HomeView: View {
                         
                     }
                     
-                }
-                .padding()
+               
                 
                 .alert("", isPresented: $viewModel.hasError) {} message: {
                     Text(viewModel.errorMessage)
                 }
+                    
             }
             
             .searchable(text: $query,placement: .navigationBarDrawer, prompt: "Find a person")
@@ -76,6 +82,49 @@ struct HomeView: View {
 
 }
 
+
+
+struct FloatingButton: View {
+    @State var translation = CGSize.zero
+    
+    var fillColor = LinearGradient(
+        colors: [Color.orange, Color.blue],
+        startPoint: .topLeading,
+        endPoint: .bottomTrailing)
+    
+    var overlayImage = Image(systemName: "plus")
+    
+    
+    var body: some View {
+        ZStack {
+            Circle()
+                .fill(fillColor)
+                .overlay(overlayImage)
+                .offset(x: translation.width, y: translation.height)
+                .frame(width: 50, height: 50)
+                .gesture(
+                    DragGesture()
+                        .onChanged({ (value) in
+                            self.translation = value.translation
+                        })
+                        .onEnded({ (value) in
+                            self.translation = CGSize.zero
+                        })
+                )
+                .animation(.interpolatingSpring(stiffness: 40, damping: 40))
+            Button(action: {
+                print("Cliked")
+            }, label: {
+                Text("+")
+            })
+            
+            
+        }
+    }
+        
+    }
+    
+}
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {

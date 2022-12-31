@@ -8,6 +8,8 @@
 import SwiftUI
 import PhotosUI
 
+
+@MainActor
 class PhotosPickerViewModel: ObservableObject {
     
     @Published var loadedImage: [PhotoPicker] = []
@@ -19,30 +21,33 @@ class PhotosPickerViewModel: ObservableObject {
                 processPhoto(photo: selectedPhoto)
                 
             }
+            
         }
     }
     
     func processPhoto(photo: PhotosPickerItem) {
-        
+
         photo.loadTransferable(type: Data.self) { result in
-            
+
             DispatchQueue.main.async {
-                
+
                 switch result {
-                    
+
                 case .success(let data):
-                    
+
                     if let data, let image = UIImage(data: data) {
                         print("Image Found")
-                        
-                        self.loadedImage.append(.init(image: Image(uiImage: image), data: data))
-                        
+
+                    self.loadedImage.append(.init(image: Image(uiImage: image), data: data))
+                       
+
                     }
-                    
+
                 case .failure(let failure):
-                    print(failure)
+                    print(failure.localizedDescription)
                 }
             }
         }
     }
+    
 }

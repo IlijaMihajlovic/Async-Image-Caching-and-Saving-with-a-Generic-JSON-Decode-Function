@@ -6,30 +6,18 @@
 //
 
 import SwiftUI
+import PhotosUI
 
 struct ScreenOne: View {
-    @State private var query = ""
-    
-
-
+    //@StateObject var photosModel: PhotosPickerViewModel = .init()
+    @StateObject var photosModel = PhotosPickerViewModel()
+   
     var body: some View {
         
         ZStack {
             Text("Screen 1")
                 .bold()
             
-//            Button {
-//                router.change(to: .two)
-//                dismiss()
-//                dismissSearch()
-//
-//            } label: {
-//                Text("Switch to Screen Two")
-//            }
-        
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .background(.pink)
-            .clipped()
             
         }
     }

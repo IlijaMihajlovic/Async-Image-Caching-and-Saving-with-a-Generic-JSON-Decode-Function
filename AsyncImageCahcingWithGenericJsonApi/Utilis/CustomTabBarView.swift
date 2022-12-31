@@ -11,7 +11,8 @@ import PhotosUI
 
 struct CustomTabBarView: View {
     
-    @StateObject var photosModel: PhotosPickerViewModel = .init()
+   // @StateObject var photosModel: PhotosPickerViewModel = .init()
+    @StateObject var photosModel = PhotosPickerViewModel()
     
     @Binding var selectedTab: CustomTabBar
     
@@ -33,9 +34,9 @@ struct CustomTabBarView: View {
                 
                 ZStack(alignment: .center) {
                     Circle()
-                        .foregroundColor(.secondary)
+                        .foregroundColor(.white)
                         .frame(width: 60, height: 60)
-                        .shadow(radius: 2)
+                        .shadow(radius: 4)
                     
                     Image(systemName: "plus.circle.fill")
                         .resizable()
@@ -48,7 +49,7 @@ struct CustomTabBarView: View {
                 .offset(y: -2)
             }
             
-            Spacer()
+            
             
             Button {
                 selectedTab = .secondScreenButton
